@@ -1,10 +1,11 @@
 import React from "react";
+import ApptDisplay from "./components/ApptDisplay";
 
 function App() {
   return (
-    <div>
-      <h2>GA SEB</h2>
-    </div>
+    <>
+      <ApptDisplay></ApptDisplay>
+    </>
   );
 }
 
