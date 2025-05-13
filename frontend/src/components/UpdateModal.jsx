@@ -122,16 +122,7 @@ const OverLay = (props) => {
         <br />
         <div className="row">
           <div className="col-md-3"></div>
-          {/* <button onClick={() => updateAppt(props.id)} className="col-md-3">
-          update
-        </button> */}
-          <button
-            onClick={() => {
-              console.log("Update button clicked"); // 确保点击触发
-              updateAppt(props.id);
-            }}
-            className="col-md-3"
-          >
+          <button onClick={() => updateAppt(props.id)} className="col-md-3">
             update
           </button>
           <button

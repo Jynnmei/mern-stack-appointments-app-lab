@@ -1,6 +1,9 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Appt.module.css";
+import TimePicker from "react-time-picker";
+import "react-time-picker/dist/TimePicker.css";
+import "react-clock/dist/Clock.css";
 
 const DateTimePicker = (props) => {
   return (
@@ -19,11 +22,12 @@ const DateTimePicker = (props) => {
 
       <div className={styles.time}>
         <div className="col-md-2">
-          <input
-            type="time"
+          <TimePicker
+            onChange={props.setSelectedTime}
             value={props.selectedTime}
-            onChange={(e) => props.setSelectedTime(e.target.value)}
-            className="form-control"
+            disableClock={true}
+            clearIcon={null}
+            format="hh:mm a"
           />
         </div>
       </div>
