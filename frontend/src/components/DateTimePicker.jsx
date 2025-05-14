@@ -9,27 +9,23 @@ const DateTimePicker = (props) => {
   return (
     <>
       <div className={styles.date}>
-        <div className="col-md-3">
-          <DatePicker
-            selected={props.selectedDate}
-            onChange={(date) => props.setSelectedDate(date)}
-            dateFormat="dd/MM/yyyy"
-            placeholderText="Select date"
-            className="form-control"
-          />
-        </div>
+        <DatePicker
+          selected={props.selectedDate}
+          onChange={(date) => props.setSelectedDate(date)}
+          dateFormat="dd/MM/yyyy"
+          placeholderText="Select date"
+          className="form-control"
+        />
       </div>
 
       <div className={styles.time}>
-        <div className="col-md-2">
-          <TimePicker
-            onChange={props.setSelectedTime}
-            value={props.selectedTime}
-            disableClock={true}
-            clearIcon={null}
-            format="hh:mm a"
-          />
-        </div>
+        <TimePicker
+          onChange={props.setSelectedTime}
+          value={props.selectedTime}
+          disableClock={true}
+          clearIcon={null}
+          format="hh:mm a"
+        />
       </div>
     </>
   );
