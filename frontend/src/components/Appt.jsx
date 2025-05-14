@@ -7,7 +7,7 @@ const Appt = (props) => {
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString("en-GB");
+    return date.toLocaleDateString("en-SG");
   };
 
   return (

@@ -42,8 +42,8 @@ export const validateAddNewAppointmentData = [
   body("date", "date must be a valid date").isISO8601(),
 
   body("time", "time is required").notEmpty(),
-  body("time", "time must be in HH:MM or HH:MM AM/PM format").matches(
-    /^([0-1]?[0-9]|2[0-3]):[0-5][0-9](\s)?(AM|PM)?$/i
+  body("time", "time must be in hh:mm AM/PM format").matches(
+    /^(0?[1-9]|1[0-2]):[0-5][0-9]\s*(AM|PM)$/i
   ),
 
   body("comments", "comments is required").notEmpty(),

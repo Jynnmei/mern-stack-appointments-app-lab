@@ -6,6 +6,24 @@ import "react-time-picker/dist/TimePicker.css";
 import "react-clock/dist/Clock.css";
 
 const DateTimePicker = (props) => {
+  console.log("Current TimePicker value:", props.selectedTime);
+
+  const formatTime = (timeStr) => {
+    const time = new Date(`1990-01-01T${timeStr}:00`);
+    return time
+      .toLocaleTimeString("en-SG", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .toUpperCase();
+  };
+
+  const handleTimeChange = (value) => {
+    const formatted = formatTime(value);
+    props.setSelectedTime(formatted);
+  };
+
   return (
     <>
       <div className={styles.date}>
@@ -20,7 +38,7 @@ const DateTimePicker = (props) => {
 
       <div className={styles.time}>
         <TimePicker
-          onChange={props.setSelectedTime}
+          onChange={handleTimeChange}
           value={props.selectedTime}
           disableClock={true}
           clearIcon={null}
